@@ -1,6 +1,5 @@
 package com.ua.verdysh.controller.scraper;
 
-import com.ua.verdysh.controller.exceptions.InvalidURLException;
 import com.ua.verdysh.controller.parser.Parser;
 import com.ua.verdysh.model.Profile;
 import com.ua.verdysh.model.Website;
@@ -8,7 +7,8 @@ import org.apache.commons.lang3.StringUtils;
 
 public class KaplanRiceScraper extends AbstractScraper {
 
-    public Profile getProfile(Parser parser, String link) throws InvalidURLException {
+    @Override
+    public Profile getProfile(Parser parser, String link){
 
         Profile profile = new Profile();
         String profileHtml = getPageHtml(assignUrl(Website.KAPLAN_RICE_URL, link, "lawyers.html"));

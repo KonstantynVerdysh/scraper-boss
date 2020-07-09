@@ -1,6 +1,5 @@
 package com.ua.verdysh;
 
-import com.ua.verdysh.controller.exceptions.InvalidURLException;
 import com.ua.verdysh.view.ProfilePrinter;
 import com.ua.verdysh.controller.ScraperFactory;
 import com.ua.verdysh.model.Profile;
@@ -25,12 +24,8 @@ public class Main {
         for (String website : websites) {
             executor.submit(() -> {
                 ScraperService service = ScraperFactory.getScraperService(website);
-                try {
-                    List<Profile> profiles = service.scrape();
-                    ProfilePrinter.printFields(website, profiles);
-                } catch (InvalidURLException e) {
-                    System.out.println(e.getMessage());
-                }
+                List<Profile> profiles = service.scrape();
+                ProfilePrinter.printFields(website, profiles);
             });
         }
 

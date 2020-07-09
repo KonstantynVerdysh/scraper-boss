@@ -23,7 +23,7 @@ public class KaplanRiceScraperTest {
         String expectedEducation = "<p>Ms. Boken is a graduate of Vanderbilt University Law School and Saint Louis University. Prior to joining Kaplan Rice, Ms. Boken was an associate at a litigation boutique in New York, where her practice included complex civil and commercial litigation and cross-border disputes.</p>";
         String expectedMail = "aboken@kaplanrice.com";
         String expectedPhone = "(212) 333-0266";
-        String expectedPhoto = null;
+        String expectedPhoto = "null";
         String expectedUrl = "lawyers/anne-boken.html";
         String expectedVcfUrl = "http://www.kaplanrice.com/vcards/Anne%20M-%20Boken.vcf";
 
