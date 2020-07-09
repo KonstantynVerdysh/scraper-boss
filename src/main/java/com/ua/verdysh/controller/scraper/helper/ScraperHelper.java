@@ -13,9 +13,7 @@ public class ScraperHelper {
         try {
             return Jsoup.connect(url).get();
         } catch (IOException e) {
-//            throw new IllegalArgumentException("Invalid URL");
-            System.out.println(e.getMessage());
+            throw new IllegalArgumentException("Invalid URL");
         }
-        return null;
     }
 }

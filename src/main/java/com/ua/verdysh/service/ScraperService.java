@@ -1,7 +1,7 @@
 package com.ua.verdysh.service;
 
-import com.ua.verdysh.controller.parser.interfaces.Parser;
-import com.ua.verdysh.controller.scraper.intefaces.Scraper;
+import com.ua.verdysh.controller.parser.Parser;
+import com.ua.verdysh.controller.scraper.Scraper;
 import com.ua.verdysh.model.Profile;
 
 import java.util.List;

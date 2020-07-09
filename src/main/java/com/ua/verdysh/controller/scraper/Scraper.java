@@ -1,6 +1,6 @@
-package com.ua.verdysh.controller.scraper.intefaces;
+package com.ua.verdysh.controller.scraper;
 
-import com.ua.verdysh.controller.parser.interfaces.Parser;
+import com.ua.verdysh.controller.parser.Parser;
 import com.ua.verdysh.model.Profile;
 
 import java.util.List;

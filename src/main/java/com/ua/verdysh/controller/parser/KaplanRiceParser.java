@@ -1,8 +1,6 @@
 package com.ua.verdysh.controller.parser;
 
 import com.ua.verdysh.controller.VcfParser;
-import com.ua.verdysh.controller.parser.interfaces.Parser;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.StringJoiner;
@@ -57,7 +55,7 @@ public class KaplanRiceParser implements Parser {
 
     @Override
     public StringJoiner getPhoto(String html) {
-        return new StringJoiner(StringUtils.EMPTY);
+        return new StringJoiner(" : ").add(null);
     }
 
     @Override
@@ -78,7 +76,9 @@ public class KaplanRiceParser implements Parser {
 
         if (vcfParser != null) {
             return vcfParser;
-        }
-        return new VcfParser(getVcfUrl(html));
+        } else
+            vcfParser = new VcfParser(getVcfUrl(html));
+
+        return vcfParser;
     }
 }

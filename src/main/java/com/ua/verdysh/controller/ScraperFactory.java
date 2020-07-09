@@ -17,11 +17,11 @@ public class ScraperFactory {
 
         switch (url) {
             case KAPLAN_RICE_URL:
-                return new KaplanRiceScraperService(new KaplanRiceScraper(), new KaplanRiceParser(), url);
+                return new DefaultScraperService(new KaplanRiceScraper(), new KaplanRiceParser(), url);
             case KMCL_LAW_URL:
-                return new KmclLawScraperService(new DefaultScraper(), new KmclLawParser(), url);
+                return new DefaultScraperService(new DefaultScraper(), new KmclLawParser(), url);
             case GF_LEGAL_URL:
-                return new GfLegalScraperService(new DefaultScraper(), new GFLegalParser(), url);
+                return new DefaultScraperService(new DefaultScraper(), new GFLegalParser(), url);
 
             default:
                 return new DefaultScraperService(null, null ,null);

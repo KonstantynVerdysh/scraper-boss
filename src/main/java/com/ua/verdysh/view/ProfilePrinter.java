@@ -1,4 +1,4 @@
-package com.ua.verdysh.controller;
+package com.ua.verdysh.view;
 
 import com.ua.verdysh.model.Profile;
 import org.apache.commons.lang3.StringUtils;
@@ -12,7 +12,7 @@ public class ProfilePrinter {
     private ProfilePrinter() {}
 
     public static void printFields(String website, List<Profile> profiles) {
-        print("**********     " + StringUtils.substringBetween(website, "www.", ".com").toUpperCase() + "     **********");
+        print("**********     " + StringUtils.substringBetween(website, "www.", ".").toUpperCase() + "     **********");
         print(StringUtils.EMPTY);
         for (Profile profile : profiles) {
             print("Name: " + profile.getFullName());

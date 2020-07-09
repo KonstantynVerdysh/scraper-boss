@@ -1,8 +1,5 @@
 package com.ua.verdysh.controller.parser;
 
-import com.ua.verdysh.controller.parser.interfaces.Parser;
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
@@ -19,8 +16,6 @@ public class GFLegalParser implements Parser {
     private static final String DESCRIPTION_SELECTOR = "div.attorneyProfileNarrative > p:nth-child(5)";
     private static final String PHOTO_SELECTOR = "img.attorneyProfilePhoto";
     private static final String EDUCATION_SELECTOR = "div.attorneyProfileNarrative > ul:nth-child(4) li";
-    private static final String VCF_URL_SELECTOR = "div.attorneyProfileVCard a > img";
-
 
     @Override
     public List<String> getProfilesLinks(String html) {
@@ -36,7 +31,7 @@ public class GFLegalParser implements Parser {
 
     @Override
     public String getJobTitle(String html) {
-        return StringUtils.EMPTY;
+        return null;
     }
 
     @Override
@@ -65,7 +60,7 @@ public class GFLegalParser implements Parser {
 
     @Override
     public StringJoiner getPhoto(String html) {
-        return new StringJoiner(getElements(html, PHOTO_SELECTOR).attr("src"));
+        return new StringJoiner(" : ").add(getElements(html, PHOTO_SELECTOR).attr("src"));
     }
 
     @Override
@@ -75,6 +70,6 @@ public class GFLegalParser implements Parser {
 
     @Override
     public String getVcfUrl(String html) {
-        return getElements(html, VCF_URL_SELECTOR).attr("src");
+        return null;
     }
 }

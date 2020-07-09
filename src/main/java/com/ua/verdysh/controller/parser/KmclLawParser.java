@@ -1,7 +1,6 @@
 package com.ua.verdysh.controller.parser;
 
 import com.ua.verdysh.controller.VcfParser;
-import com.ua.verdysh.controller.parser.interfaces.Parser;
 import org.jsoup.nodes.TextNode;
 
 import java.util.List;
@@ -82,7 +81,9 @@ public class KmclLawParser implements Parser {
 
         if (vcfParser != null) {
             return vcfParser;
-        }
-        return new VcfParser(getVcfUrl(html));
+        } else
+            vcfParser = new VcfParser(getVcfUrl(html));
+
+        return vcfParser;
     }
 }

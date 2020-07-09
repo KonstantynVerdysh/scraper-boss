@@ -1,4 +1,4 @@
-package com.ua.verdysh.controller.parser.interfaces;
+package com.ua.verdysh.controller.parser;
 
 import java.util.List;
 import java.util.StringJoiner;
