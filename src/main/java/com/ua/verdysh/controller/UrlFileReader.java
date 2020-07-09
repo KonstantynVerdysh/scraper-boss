@@ -1,14 +1,13 @@
 package com.ua.verdysh.controller;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class UrlReader {
+public class UrlFileReader {
 
-    private UrlReader() {}
+    private UrlFileReader() {}
 
     public static String readFromUrl(String urlStr) {
 
@@ -21,8 +20,6 @@ public class UrlReader {
                 while ((line = reader.readLine()) != null) {
                     result.append(line).append("\n");
                 }
-            } catch (IOException e) {
-//                System.out.println(e.getMessage());
             } catch (Exception e) {
                 System.out.println("Error");
             }
@@ -35,7 +32,7 @@ public class UrlReader {
         try {
             url = new URL(urlStr);
         } catch (MalformedURLException e) {
-//            System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
         return url;
     }

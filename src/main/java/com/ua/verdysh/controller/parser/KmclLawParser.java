@@ -15,10 +15,9 @@ public class KmclLawParser implements Parser {
     private static final String PHONE_SELECTOR = "div.phone-wrap > a";
     private static final String MAIL_SELECTOR = "div.email-wrap > a";
     private static final String ADDRESS_SELECTOR = "div[class*='uabb-dual-color-heading'] span.uabb-second-heading-text";
-    private static final String DESCRIPTION_SELECTOR = " div.fl-module.fl-module-rich-text.fl-node-5e4495912d5aa " +
-            "div.fl-module-content.fl-node-content div.fl-rich-text > p";
+    private static final String DESCRIPTION_SELECTOR = "div.fl-module.fl-module-rich-text[class*='fl-node-']:nth-child(1) div.fl-rich-text > p:nth-child(1)";
     private static final String PHOTO_SELECTOR = "div.attorney-single-image > img";
-    private static final String EDUCATION_SELECTOR = "div.pp-accordion-item.pp-accordion-item-active div.pp-accordion-content.fl-clearfix div > p";
+    private static final String EDUCATION_SELECTOR = "div.pp-accordion-content.fl-clearfix div > p";
     private static final String VCF_URL_SELECTOR = "div.fl-button-wrap.fl-button-width-auto.fl-button-left > a.fl-button";
 
     private VcfParser vcfParser;
@@ -52,14 +51,14 @@ public class KmclLawParser implements Parser {
     public String getAddress(String html) {
         StringBuilder sb = new StringBuilder();
         for (TextNode s : getElements(html, ADDRESS_SELECTOR).textNodes()) {
-            sb.append(s).append(",");
+            sb.append(s);
         }
         return sb.toString();
     }
 
     @Override
     public String getDescription(String html) {
-        return getElements(html, DESCRIPTION_SELECTOR).text();
+        return getElements(html, DESCRIPTION_SELECTOR).eachText().get(0);
     }
 
     @Override
@@ -69,7 +68,7 @@ public class KmclLawParser implements Parser {
 
     @Override
     public String getEducation(String html) {
-        return getElements(html, EDUCATION_SELECTOR).text();
+        return getElements(html, EDUCATION_SELECTOR).eachText().get(0);
     }
 
     @Override

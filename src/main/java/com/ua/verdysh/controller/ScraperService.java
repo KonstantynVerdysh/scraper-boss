@@ -1,12 +1,13 @@
-package com.ua.verdysh.service;
+package com.ua.verdysh.controller;
 
+import com.ua.verdysh.controller.exceptions.InvalidURLException;
 import com.ua.verdysh.controller.parser.Parser;
 import com.ua.verdysh.controller.scraper.Scraper;
 import com.ua.verdysh.model.Profile;
 
 import java.util.List;
 
-public abstract class ScraperService {
+public class ScraperService {
 
     private final Scraper scraper;
     private final Parser parser;
@@ -18,7 +19,7 @@ public abstract class ScraperService {
         this.url = url;
     }
 
-    public List<Profile> scrape() {
+    public List<Profile> scrape() throws InvalidURLException {
         return scraper.scrapeProfiles(parser, url);
     }
 }

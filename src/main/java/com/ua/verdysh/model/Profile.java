@@ -18,4 +18,18 @@ public class Profile {
     private StringJoiner photo;
     private String education;
     private String vcfUrl;
+
+    @Override
+    public String toString() {
+        return  "Name: " + getFullName() + "\n" +
+                "Job title: " + getJobTitle() + "\n" +
+                "Address: " + getAddress() + "\n" +
+                "Description: " + getDescription() + "\n" +
+                "Education: " + getEducation() + "\n" +
+                "Mail: " + getMail() + "\n" +
+                "Phone: " + getPhone() + "\n" +
+                "Photo: " + getPhoto() + "\n" +
+                "Url: " + getUrl() + "\n" +
+                "VCF url: " + getVcfUrl();
+    }
 }

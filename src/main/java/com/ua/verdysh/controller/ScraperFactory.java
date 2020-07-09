@@ -5,7 +5,6 @@ import com.ua.verdysh.controller.parser.KaplanRiceParser;
 import com.ua.verdysh.controller.parser.KmclLawParser;
 import com.ua.verdysh.controller.scraper.DefaultScraper;
 import com.ua.verdysh.controller.scraper.KaplanRiceScraper;
-import com.ua.verdysh.service.*;
 
 import static com.ua.verdysh.model.Website.*;
 
@@ -17,14 +16,14 @@ public class ScraperFactory {
 
         switch (url) {
             case KAPLAN_RICE_URL:
-                return new DefaultScraperService(new KaplanRiceScraper(), new KaplanRiceParser(), url);
+                return new ScraperService(new KaplanRiceScraper(), new KaplanRiceParser(), url);
             case KMCL_LAW_URL:
-                return new DefaultScraperService(new DefaultScraper(), new KmclLawParser(), url);
+                return new ScraperService(new DefaultScraper(), new KmclLawParser(), url);
             case GF_LEGAL_URL:
-                return new DefaultScraperService(new DefaultScraper(), new GFLegalParser(), url);
+                return new ScraperService(new DefaultScraper(), new GFLegalParser(), url);
 
             default:
-                return new DefaultScraperService(null, null ,null);
+                return new ScraperService(null, null ,null);
         }
     }
 }

@@ -12,24 +12,19 @@ public class ProfilePrinter {
     private ProfilePrinter() {}
 
     public static void printFields(String website, List<Profile> profiles) {
-        print("**********     " + StringUtils.substringBetween(website, "www.", ".").toUpperCase() + "     **********");
+        print("**********     " + cutWebsiteName(website).toUpperCase() + "     **********");
         print(StringUtils.EMPTY);
         for (Profile profile : profiles) {
-            print("Name: " + profile.getFullName());
-            print("Job title: " + profile.getJobTitle());
-            print("Address: " + profile.getAddress());
-            print("Description: " + profile.getDescription());
-            print("Education: " + profile.getEducation());
-            print("Mail: " + profile.getMail());
-            print("Phone: " + profile.getPhone());
-            print("Photo: " + profile.getPhoto());
-            print("Url: " + profile.getUrl());
-            print("VCF url: " + profile.getVcfUrl());
+            print(profile.toString());
             print(PROFILE_DELIMITER);
         }
         print(StringUtils.EMPTY);
         print(StringUtils.EMPTY);
         print(StringUtils.EMPTY);
+    }
+
+    private static String cutWebsiteName(String website) {
+        return StringUtils.substringBetween(website, "www.", ".");
     }
 
     private static void print(String line) {

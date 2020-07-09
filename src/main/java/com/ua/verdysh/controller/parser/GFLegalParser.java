@@ -60,7 +60,7 @@ public class GFLegalParser implements Parser {
 
     @Override
     public StringJoiner getPhoto(String html) {
-        return new StringJoiner(" : ").add(getElements(html, PHOTO_SELECTOR).attr("src"));
+        return new StringJoiner(" : ").add("https://www.gflegal.com" + getElements(html, PHOTO_SELECTOR).attr("src"));
     }
 
     @Override

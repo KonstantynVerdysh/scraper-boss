@@ -37,7 +37,7 @@ public class VcfParser {
     }
 
     private String cutElement(String matcher, String separator) {
-        String[] vcfBody = UrlReader.readFromUrl(vcfUrl).split("\n");
+        String[] vcfBody = UrlFileReader.readFromUrl(vcfUrl).split("\n");
         return Arrays.stream(vcfBody)
                 .filter(v -> v.contains(matcher))
                 .map(v -> StringUtils.substringAfterLast(v, separator))
