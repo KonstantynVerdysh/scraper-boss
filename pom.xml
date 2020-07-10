@@ -19,6 +19,7 @@
         <apache.commons.lang.version>3.10</apache.commons.lang.version>
         <jsoup.version>1.13.1</jsoup.version>
         <commons.codec.version>1.14</commons.codec.version>
+        <google.gson.verdsion>2.8.6</google.gson.verdsion>
     </properties>
 
     <dependencies>
@@ -49,6 +50,10 @@
             <artifactId>commons-codec</artifactId>
             <version>${commons.codec.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${google.gson.verdsion}</version>
+        </dependency>
     </dependencies>
 </project>

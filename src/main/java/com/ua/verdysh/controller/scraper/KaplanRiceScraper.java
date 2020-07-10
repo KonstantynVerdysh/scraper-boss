@@ -5,7 +5,7 @@ import com.ua.verdysh.model.Profile;
 import com.ua.verdysh.model.Website;
 import org.apache.commons.lang3.StringUtils;
 
-public class KaplanRiceScraper extends AbstractScraper {
+public class KaplanRiceScraper extends DefaultScraper {
 
     @Override
     public Profile getProfile(Parser parser, String link){

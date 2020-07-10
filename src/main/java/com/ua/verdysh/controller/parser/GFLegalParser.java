@@ -8,7 +8,7 @@ import static com.ua.verdysh.controller.parser.helper.ParserHelper.getElements;
 
 public class GFLegalParser implements Parser {
 
-    private static final String PROFILES_LINKS_SELECTOR = "a[href*='/Attorneys/'][itemprop='Name']";
+    private static final String PROFILES_LINKS_SELECTOR = "div#content a[itemprop='Name']";
     private static final String FULL_NAME_SELECTOR = "#pageTitle";
     private static final String PHONE_SELECTOR = " div.attorneyProfilePhone";
     private static final String MAIL_SELECTOR = "div.attorneyProfileFax > a";

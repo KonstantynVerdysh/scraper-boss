@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.StringJoiner;
 
 public interface Parser {
+
     List<String> getProfilesLinks(String html);
     String getFullName(String html);
     String getJobTitle(String html);

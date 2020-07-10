@@ -3,7 +3,6 @@ package com.ua.verdysh;
 import com.ua.verdysh.view.ProfilePrinter;
 import com.ua.verdysh.controller.ScraperFactory;
 import com.ua.verdysh.model.Profile;
-import com.ua.verdysh.model.Website;
 import com.ua.verdysh.controller.ScraperService;
 
 import java.util.Arrays;
@@ -11,13 +10,16 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static com.ua.verdysh.model.Website.*;
+
 public class Main {
     public static void main(String[] args) {
 
         List<String> websites = Arrays.asList(
-                Website.KAPLAN_RICE_URL,
-                Website.KMCL_LAW_URL,
-                Website.GF_LEGAL_URL);
+//                KAPLAN_RICE_URL,
+//                KMCL_LAW_URL,
+//                GF_LEGAL_URL,
+                KUTAK_ROCK_URL);
 
         ExecutorService executor = Executors.newFixedThreadPool(websites.size());
 
