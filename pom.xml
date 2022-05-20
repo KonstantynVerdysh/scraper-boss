@@ -19,7 +19,7 @@
         <apache.commons.lang.version>3.10</apache.commons.lang.version>
         <jsoup.version>1.13.1</jsoup.version>
         <commons.codec.version>1.14</commons.codec.version>
-        <google.gson.verdsion>2.8.6</google.gson.verdsion>
+        <google.gson.verdsion>2.8.9</google.gson.verdsion>
         <commons-io.version>2.7</commons-io.version>
         <okhttp3.version>3.2.0</okhttp3.version>
     </properties>
